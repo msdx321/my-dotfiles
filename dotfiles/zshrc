@@ -28,6 +28,9 @@ eval "$(fasd --init posix-alias zsh-hook zsh-ccomp)"
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
+# thefuck bringup
+eval $(thefuck --alias) 
+
 # Powerlevel9k's config
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv)
