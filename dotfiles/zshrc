@@ -33,4 +33,4 @@ eval $(thefuck --alias)
 
 # Powerlevel9k's config
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv time)

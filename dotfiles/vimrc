@@ -47,7 +47,6 @@ endif
 
 "My Own Config----------------------------
 colorscheme Tomorrow-Night
-filetype plugin indent on
 let NERDTreeMinimalUI=1
 let g:deoplete#enable_at_startup = 1
 let g:gitgutter_eager = 1
@@ -58,10 +57,24 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 map <C-n> :NERDTreeToggle<CR>
+map <F8> :call ToggleMouse()<CR>
 set encoding=utf-8
 set expandtab
+set mouse=a
 set number
 set pastetoggle=<F9>
 set shiftwidth=4
 set tabstop=4
 set termencoding=utf-8
+
+"My Own Function-------------------------
+function! ToggleMouse()
+    " check if mouse is enabled
+    if &mouse == 'a'
+        " disable mouse
+        set mouse=
+    else
+        " enable mouse everywhere
+        set mouse=a
+    endif
+endfunc
