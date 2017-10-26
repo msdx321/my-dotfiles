@@ -13,7 +13,7 @@ fi
 # Customize to your needs...
 alias vim="nvim"
 export EDITOR=nvim
-export GOPATH=~/workspace/goPath
+export GOPATH=~/workspace/go-path
 export GPG_TTY=$(tty)
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export PATH=~/.bin:$PATH
@@ -34,3 +34,8 @@ eval $(thefuck --alias)
 # Powerlevel9k's config
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv time)
+
+# Autostart X at login
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  exec startx
+fi
