@@ -1,14 +1,12 @@
 [user]
 	email = msdx321@gmail.com
 	name = msdx321
-	signingkey = FF28F14B572D3510
 [color]
 	ui = auto
 [core]
-	editor = nvim
+	editor = vim
 [credential]
 	helper = store
 [alias]
 	ll = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an, %cr)' --abbrev-commit
-[commit]
-	gpgsign = true
+	permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
