@@ -8,6 +8,7 @@ endif
 " plugs install
 call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'edkolev/tmuxline.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -15,8 +16,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
-Plug 'tpope/vim-sleuth'
 call plug#end()
 
 " My Own Config
