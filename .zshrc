@@ -11,6 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+LS_COLORS="ow=01;36;40" && export LS_COLORS
 export GPG_TTY=$(tty)
 export TERM=xterm-256color
 
