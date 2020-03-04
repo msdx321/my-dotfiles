@@ -25,6 +25,7 @@ LS_COLORS="ow=01;36;40" && export LS_COLORS
 ## Auto start tmux
 zstyle ':prezto:module:tmux:auto-start' local 'yes'
 zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+zstyle ':prezto:module:tmux:session' name 'WSL'
 
 ## Set p10k promp
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
