@@ -22,6 +22,7 @@ zinit light-mode for \
 ## Auto start tmux
 zstyle ':prezto:module:tmux:auto-start' local 'yes'
 zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+zstyle ':prezto:module:tmux:session' name 'msdx321'
 
 ## Set p10k promp
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
