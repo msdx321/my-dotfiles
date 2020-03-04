@@ -19,11 +19,15 @@ zinit light-mode for \
     zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
+## Auto start tmux
 zstyle ':prezto:module:tmux:auto-start' local 'yes'
 zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+
+## Set p10k promp
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv)
 
+## Load plugins
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 
@@ -44,9 +48,11 @@ zinit wait lucid light-mode for \
   blockf atpull'zinit creinstall -q .' \
       zsh-users/zsh-completions
 
+## Bringup fzf
 export FZF_TMUX=1
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 
+## Bringup fasd
 fasd_cache="$HOME/.fasd-init-zsh"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
     fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install >| "$fasd_cache"
