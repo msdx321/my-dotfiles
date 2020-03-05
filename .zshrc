@@ -46,6 +46,7 @@ zinit wait lucid light-mode for \
   PZT::modules/helper/init.zsh \
   PZT::modules/directory/init.zsh \
   PZT::modules/gpg/init.zsh \
+  PZT::modules/history/init.zsh \
   PZT::modules/ssh/init.zsh \
   PZT::modules/tmux/init.zsh
  
