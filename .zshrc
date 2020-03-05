@@ -27,7 +27,10 @@ zstyle ':prezto:module:tmux:auto-start' local 'yes'
 zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 zstyle ':prezto:module:tmux:session' name 'WSL'
 
-## Set p10k promp
+## Load SSH credential
+zstyle ':prezto:module:ssh:load' identities 'id_rsa'
+
+## Set p10k prompt
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv)
 
@@ -35,31 +38,26 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtua
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 
-zinit wait lucid for \
+zinit wait lucid light-mode for \
+  OMZ::lib/git.zsh \
+  OMZ::plugins/git/git.plugin.zsh \
+  OMZ::plugins/fzf/fzf.plugin.zsh \
+  OMZ::plugins/fasd/fasd.plugin.zsh \
   PZT::modules/helper/init.zsh \
+  PZT::modules/directory/init.zsh \
   PZT::modules/gpg/init.zsh \
-  PZT::modules/tmux/init.zsh \
-  bobsoppe/zsh-ssh-agent \
+  PZT::modules/ssh/init.zsh \
+  PZT::modules/tmux/init.zsh
+ 
+zinit wait lucid light-mode for \
   chrissicool/zsh-256color \
   wookayin/fzf-fasd \
   zpm-zsh/ls
 
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
-      zdharma/fast-syntax-highlighting \
+    zdharma/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
-      zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-autosuggestions \
   blockf atpull'zinit creinstall -q .' \
-      zsh-users/zsh-completions
-
-## Bringup fzf
-export FZF_TMUX=1
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-
-## Bringup fasd
-fasd_cache="$HOME/.fasd-init-zsh"
-if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-    fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install >| "$fasd_cache"
-fi
-source "$fasd_cache"
-unset fasd_cache
+    zsh-users/zsh-completions
