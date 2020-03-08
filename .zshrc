@@ -44,8 +44,7 @@ zinit wait lucid light-mode for \
   PZT::modules/directory/init.zsh \
   PZT::modules/gpg/init.zsh \
   PZT::modules/history/init.zsh \
-  PZT::modules/ssh/init.zsh \
-  PZT::modules/tmux/init.zsh
+  PZT::modules/ssh/init.zsh
  
 zinit wait lucid light-mode for \
   chrissicool/zsh-256color \
@@ -59,3 +58,5 @@ zinit wait lucid light-mode for \
     zsh-users/zsh-autosuggestions \
   blockf atpull'zinit creinstall -q .' \
     zsh-users/zsh-completions
+
+zinit snippet PZT::modules/tmux/init.zsh
