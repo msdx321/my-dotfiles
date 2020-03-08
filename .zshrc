@@ -20,7 +20,10 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 ## Fix color under WSL
-LS_COLORS="ow=01;36;40" && export LS_COLORS
+export LS_COLORS="ow=01;36;40"
+
+## Use vim as editor
+export EDITOR="vim"
 
 ## Auto start tmux
 zstyle ':prezto:module:tmux:auto-start' local 'yes'
@@ -47,8 +50,7 @@ zinit wait lucid light-mode for \
   PZT::modules/directory/init.zsh \
   PZT::modules/gpg/init.zsh \
   PZT::modules/history/init.zsh \
-  PZT::modules/ssh/init.zsh \
-  PZT::modules/tmux/init.zsh
+  PZT::modules/ssh/init.zsh
  
 zinit wait lucid light-mode for \
   chrissicool/zsh-256color \
@@ -62,3 +64,5 @@ zinit wait lucid light-mode for \
     zsh-users/zsh-autosuggestions \
   blockf atpull'zinit creinstall -q .' \
     zsh-users/zsh-completions
+
+zinit snippet PZT::modules/tmux/init.zsh
