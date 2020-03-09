@@ -52,14 +52,17 @@ zinit wait lucid light-mode for \
   PZT::modules/gpg/init.zsh \
   PZT::modules/history/init.zsh \
   PZT::modules/ssh/init.zsh \
-  DarrinTisdale/zsh-aliases-exa \
   chrissicool/zsh-256color \
   wookayin/fzf-fasd \
+  zdharma/zui \
+  DarrinTisdale/zsh-aliases-exa \
   atinit"zicompinit; zicdreplay" \
     zdharma/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions \
   blockf atpull'zinit creinstall -q .' \
-    zsh-users/zsh-completions
+    zsh-users/zsh-completions \
+  atinit"zmodload zsh/curses" \
+    zinit-zsh/zinit-console
 
 zinit snippet PZT::modules/tmux/init.zsh
