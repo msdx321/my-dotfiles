@@ -19,13 +19,6 @@ zinit light-mode for \
     zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
-## Use exa
-alias l='exa'
-alias ls='exa'
-alias la='exa -a'
-alias ll='exa -l'
-alias lla='exa -la'
-
 ## Fix color under WSL
 export LS_COLORS="ow=01;36;40"
 
@@ -59,6 +52,7 @@ zinit wait lucid light-mode for \
   PZT::modules/gpg/init.zsh \
   PZT::modules/history/init.zsh \
   PZT::modules/ssh/init.zsh \
+  DarrinTisdale/zsh-aliases-exa \
   chrissicool/zsh-256color \
   wookayin/fzf-fasd \
   atinit"zicompinit; zicdreplay" \
