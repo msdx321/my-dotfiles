@@ -47,14 +47,10 @@ zinit wait lucid light-mode for \
   PZT::modules/directory/init.zsh \
   PZT::modules/gpg/init.zsh \
   PZT::modules/history/init.zsh \
-  PZT::modules/ssh/init.zsh
- 
-zinit wait lucid light-mode for \
+  PZT::modules/ssh/init.zsh \
   chrissicool/zsh-256color \
   wookayin/fzf-fasd \
-  zpm-zsh/ls
-
-zinit wait lucid light-mode for \
+  zpm-zsh/ls \
   atinit"zicompinit; zicdreplay" \
     zdharma/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
