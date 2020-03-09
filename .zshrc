@@ -19,6 +19,13 @@ zinit light-mode for \
     zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
+## Use exa
+alias l='exa'
+alias ls='exa'
+alias la='exa -a'
+alias ll='exa -l'
+alias lla='exa -la'
+
 ## Use vim as editor
 export EDITOR="vim"
 
@@ -50,7 +57,6 @@ zinit wait lucid light-mode for \
   PZT::modules/ssh/init.zsh \
   chrissicool/zsh-256color \
   wookayin/fzf-fasd \
-  zpm-zsh/ls \
   atinit"zicompinit; zicdreplay" \
     zdharma/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
