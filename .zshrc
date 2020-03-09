@@ -50,9 +50,10 @@ zinit light romkatv/powerlevel10k
 
 zinit wait lucid light-mode for \
   OMZ::lib/git.zsh \
-  OMZ::plugins/git/git.plugin.zsh \
-  OMZ::plugins/fzf/fzf.plugin.zsh \
   OMZ::plugins/fasd/fasd.plugin.zsh \
+  OMZ::plugins/fzf/fzf.plugin.zsh \
+  OMZ::plugins/git/git.plugin.zsh \
+  OMZ::plugins/sudo/sudo.plugin.zsh \
   PZT::modules/helper/init.zsh \
   PZT::modules/directory/init.zsh \
   PZT::modules/gpg/init.zsh \
