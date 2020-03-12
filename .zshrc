@@ -24,7 +24,7 @@ export EDITOR="vim"
 
 ## Auto start tmux
 zstyle ':prezto:module:tmux:auto-start' local 'yes'
-zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+zstyle ':prezto:module:tmux:auto-start' remote 'no'
 zstyle ':prezto:module:tmux:session' name 'msdx321'
 
 ## Load SSH credential
