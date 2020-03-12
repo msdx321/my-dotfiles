@@ -30,6 +30,11 @@ zstyle ':prezto:module:tmux:session' name 'msdx321'
 ## Load SSH credential
 zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 
+## Set up editor plugin
+zstyle ':prezto:module:editor' key-bindings 'emacs'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' ps-context 'yes'
+
 ## Set p10k prompt
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv)
@@ -46,6 +51,7 @@ zinit wait lucid light-mode for \
   OMZ::plugins/sudo/sudo.plugin.zsh \
   PZT::modules/helper/init.zsh \
   PZT::modules/directory/init.zsh \
+  PZT::modules/editor/init.zsh \
   PZT::modules/gpg/init.zsh \
   PZT::modules/history/init.zsh \
   PZT::modules/ssh/init.zsh \
