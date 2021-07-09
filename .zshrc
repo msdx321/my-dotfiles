@@ -24,8 +24,6 @@ zinit light-mode for \
 ## Use vim as editor
 export EDITOR="vim"
 
-typeset -g ZPLG_MOD_DEBUG=1
-
 ## Set p10k prompt
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv)
