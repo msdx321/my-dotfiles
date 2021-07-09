@@ -8,18 +8,16 @@ endif
 " plugs install
 call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'edkolev/tmuxline.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
-Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " My Own Config
-colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night-Eighties
 let g:airline_powerline_fonts = 1
 let g:airline_theme='tomorrow'
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
