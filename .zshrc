@@ -31,8 +31,7 @@ export EDITOR="vim"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv)
 
-zinit ice depth=1
-zinit load romkatv/powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 zinit wait lucid for \
   OMZ::lib/git.zsh \
