@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -11,6 +18,10 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+zstyle ':prezto:module:tmux:auto-start' local 'yes'
+zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+zinit snippet PZT::modules/tmux/init.zsh
+
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
@@ -20,16 +31,13 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
-zstyle ':prezto:module:tmux:auto-start' local 'no'
-zstyle ':prezto:module:tmux:auto-start' remote 'yes'
-zinit snippet PZT::modules/tmux/init.zsh
+
+## Setup ssh
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+zstyle :omz:plugins:ssh-agent quiet yes
 
 ## Use vim as editor
 export EDITOR="vim"
-
-## Set p10k prompt
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs virtualenv)
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
@@ -38,12 +46,13 @@ zinit wait lucid for \
   OMZ::plugins/fasd/fasd.plugin.zsh \
   OMZ::plugins/fzf/fzf.plugin.zsh \
   OMZ::plugins/git/git.plugin.zsh \
-  OMZ::plugins/sudo/sudo.plugin.zsh \
   OMZ::plugins/gpg-agent/gpg-agent.plugin.zsh \
-  PZT::modules/helper/init.zsh \
+  OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh \
+  OMZ::plugins/sudo/sudo.plugin.zsh \
   PZT::modules/directory/init.zsh \
+  PZT::modules/helper/init.zsh \
   PZT::modules/history/init.zsh \
-  DarrinTisdale/zsh-aliases-exa \
+  MohamedElashri/exa-zsh \
   chrissicool/zsh-256color \
   wookayin/fzf-fasd \
   zdharma-continuum/zui \
@@ -51,7 +60,14 @@ zinit wait lucid for \
     zdharma-continuum/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions \
-  blockf atpull'zinit creinstall -q .' \
-    zsh-users/zsh-completions \
   atinit"zmodload zsh/curses" \
     zdharma-continuum/zinit-console
+
+zinit for \
+    atload"zicompinit; zicdreplay" \
+    blockf \
+    lucid \
+    wait \
+  zsh-users/zsh-completions
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

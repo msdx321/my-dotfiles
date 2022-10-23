@@ -1,7 +1,7 @@
 [user]
 	email = msdx321@gmail.com
 	name = msdx321
-	signingkey = 1EFE382B1056AED8
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOTdYWG7wJd9UDKJFfCKx6Yin1vWfrDSbn2WpjTVUis+
 [color]
 	ui = auto
 [core]
@@ -13,3 +13,5 @@
 	permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
 [commit]
 	gpgsign = true
+[gpg]
+	format = ssh
